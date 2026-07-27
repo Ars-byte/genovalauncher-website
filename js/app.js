@@ -103,8 +103,8 @@ const ThemeManager = (() => {
   const apply = (t) => {
     document.documentElement.setAttribute('data-theme', t);
     document.querySelectorAll('.theme-toggle').forEach(b => {
-      b.querySelector('.icon-sun').style.display = t === 'dark' ? 'inline' : 'none';
-      b.querySelector('.icon-moon').style.display = t === 'light' ? 'inline' : 'none';
+      b.querySelector('.icon-sun').style.display = t === 'dark' ? 'none' : 'inline';
+      b.querySelector('.icon-moon').style.display = t === 'dark' ? 'inline' : 'none';
     });
   };
   const init = () => {
