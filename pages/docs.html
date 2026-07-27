@@ -35,7 +35,7 @@
     </div>
     <button class="theme-toggle" aria-label="Toggle theme">
       <span class="icon-sun">☀</span>
-      <span class="icon-moon" style="display:none">☽</span>
+      <span class="icon-moon">☽</span>
     </button>
   </div>
 </nav>
@@ -82,6 +82,20 @@
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd Sunshine-launcher</span></div>
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">python3 -m venv venv && source venv/bin/activate</span></div>
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">pip install -r requirements.txt && ./run.sh</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>NixOS</h3>
+        <div class="terminal-wrap" style="margin-bottom:1.5rem">
+          <div class="terminal">
+            <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
+            <div class="terminal__body">
+              <div class="terminal__line"><span class="terminal__cmd"># flake.nix</span></div>
+              <div class="terminal__line"><span class="terminal__cmd">inputs.sunshine-launcher.url = "github:Ars-byte/Sunshine-launcher";</span></div>
+              <div class="terminal__line"><span class="terminal__cmd"># configuration.nix</span></div>
+              <div class="terminal__line"><span class="terminal__cmd">environment.systemPackages = [ inputs.sunshine-launcher.packages.${system}.default ];</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo nixos-rebuild switch</span></div>
             </div>
           </div>
         </div>

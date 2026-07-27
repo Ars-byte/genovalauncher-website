@@ -148,7 +148,12 @@ Y88b  d88P Y88b 888 888  888 Y8b.    Y88b.  888  888  Y8bd8P  Y8b.     888
       <p class="section-label" data-i18n="install.label">Get Started</p>
       <h2 class="section-title" data-i18n="install.title">Install in<br>seconds.</h2>
     </div>
+    <div class="tabs" data-tabs="install-os" style="margin-bottom:2rem">
+      <button class="tab-btn active" data-tab="linux">Linux</button>
+      <button class="tab-btn" data-tab="nixos">NixOS</button>
+    </div>
     <div class="install-grid">
+      <div data-tab-panel="install-os" data-tab-id="linux">
       <div class="install-steps">
         <div class="install-step" data-reveal>
           <div class="install-step__num">1</div>
@@ -198,6 +203,63 @@ Y88b  d88P Y88b 888 888  888 Y8b.    Y88b.  888  888  Y8bd8P  Y8b.     888
             </div>
           </div>
         </div>
+      </div>
+      </div>
+
+      <!-- NIXOS -->
+      <div data-tab-panel="install-os" data-tab-id="nixos" style="display:none">
+      <div class="install-steps">
+        <div class="install-step">
+          <div class="install-step__num">1</div>
+          <div class="install-step__content">
+            <h4>Add SunshineLauncher to flake.nix</h4>
+            <div class="terminal-wrap" style="margin-bottom:1rem">
+              <div class="terminal">
+                <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">flake.nix</span></div>
+                <div class="terminal__body" id="t-nix-input">
+                  <div class="terminal__line"><span class="terminal__cmd">inputs = {</span></div>
+                  <div class="terminal__line"><span class="terminal__cmd">&nbsp;&nbsp;sunshine-launcher.url = "github:Ars-byte/Sunshine-launcher";</span></div>
+                  <div class="terminal__line"><span class="terminal__cmd">};</span></div>
+                </div>
+              </div>
+              <button class="copy-btn" data-target="t-nix-input">Copy</button>
+            </div>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="install-step__num">2</div>
+          <div class="install-step__content">
+            <h4>Add to system packages</h4>
+            <div class="terminal-wrap" style="margin-bottom:1rem">
+              <div class="terminal">
+                <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">configuration.nix</span></div>
+                <div class="terminal__body" id="t-nix-pkg">
+                  <div class="terminal__line"><span class="terminal__cmd">environment.systemPackages = [</span></div>
+                  <div class="terminal__line"><span class="terminal__cmd">&nbsp;&nbsp;inputs.sunshine-launcher.packages.${system}.default</span></div>
+                  <div class="terminal__line"><span class="terminal__cmd">];</span></div>
+                </div>
+              </div>
+              <button class="copy-btn" data-target="t-nix-pkg">Copy</button>
+            </div>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="install-step__num">3</div>
+          <div class="install-step__content">
+            <h4>Rebuild and run</h4>
+            <div class="terminal-wrap">
+              <div class="terminal">
+                <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
+                <div class="terminal__body" id="t-nix-rebuild">
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo nixos-rebuild switch</span></div>
+                  <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">sunshine-launcher</span></div>
+                </div>
+              </div>
+              <button class="copy-btn" data-target="t-nix-rebuild">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       <div data-reveal>
         <h3 class="section-title" style="font-size:2rem;margin-bottom:1.5rem" data-i18n="install.req.title">Requirements</h3>

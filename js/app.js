@@ -117,4 +117,34 @@ const ThemeManager = (() => {
   return { init };
 })();
 
-document.addEventListener('DOMContentLoaded', () => { ThemeManager.init(); LangManager.init(); });
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init(); LangManager.init();
+
+  // Tab switcher
+  document.querySelectorAll('[data-tabs]').forEach(group => {
+    const key = group.dataset.tabs;
+    group.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll(`[data-tab-panel="${key}"]`).forEach(p => {
+          p.style.display = p.dataset.tabId === btn.dataset.tab ? 'block' : 'none';
+        });
+      });
+    });
+  });
+
+  // Copy buttons
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const el = document.getElementById(btn.dataset.target);
+      if (!el) return;
+      const text = Array.from(el.querySelectorAll('.terminal__cmd'))
+        .map(l => l.textContent.trim()).filter(Boolean).join('\n');
+      navigator.clipboard.writeText(text);
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = orig, 1500);
+    });
+  });
+});
