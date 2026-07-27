@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SunshineLauncher — Minecraft Bedrock Launcher for Linux</title>
+  <meta name="description" content="A modern graphical launcher for Minecraft Bedrock Edition on Linux. Install, manage and play multiple versions from APK or Google Play." />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <style>
+    .hero__subtitle { font-size:1.1rem; color:var(--fg-muted); line-height:1.7; max-width:480px; margin: 1.5rem 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .feature-block { background: var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:2rem; transition:all var(--transition); }
+    .feature-block:hover { border-color: var(--fg); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .feature-block__num { font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--fg-muted); margin-bottom:0.5rem; }
+    .feature-block__title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem; }
+    .feature-block__text { font-size:0.9rem; color:var(--fg-muted); line-height:1.6; margin-bottom:1rem; }
+    .feature-block__tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .install-grid { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; margin-top: 2rem; }
+    .install-steps { display: flex; flex-direction: column; gap: 2rem; }
+    .install-step { display: flex; gap: 1.5rem; }
+    .install-step__num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.5rem; min-width:40px; color:var(--accent); }
+    .install-step h4 { font-size:1rem; margin-bottom:0.25rem; }
+    .install-step p { font-size:0.9rem; color:var(--fg-muted); margin-bottom:0.75rem; }
+    .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+    @media (max-width:768px) { .features-grid,.install-grid,.controls-grid { grid-template-columns:1fr; } .hero__subtitle { max-width:100%; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" role="navigation">
+  <a class="nav__logo" href="index.html">SUNSHINE<span>LAUNCHER</span></a>
+  <ul class="nav__links" role="list">
+    <li><a href="#features" data-i18n="nav.features">Features</a></li>
+    <li><a href="#install" data-i18n="nav.install">Install</a></li>
+    <li><a href="#controls" data-i18n="nav.controls">Performance</a></li>
+    <li><a href="pages/docs.html" data-i18n="nav.docs">Docs</a></li>
+    <li><a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+  <div class="nav__actions">
+    <div class="lang-switcher" role="group">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <span class="icon-sun">\2600</span>
+      <span class="icon-moon" style="display:none">\263D</span>
+    </button>
+  </div>
+</nav>
+
+<main class="page">
+
+<!-- HERO -->
+<section class="hero section" id="home">
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__tag"><span class="badge">v1.0.0 · GPL v3</span></div>
+        <h1 class="display">SUNSHINE<br>LAUNCHER</h1>
+        <p class="hero__subtitle" data-i18n="hero.sub">
+          A modern, lightweight Minecraft Bedrock launcher for Linux.<br>
+          Install, manage and play multiple versions from APK or Google Play.<br>
+          Multi-language, profiles, mods, and performance optimizations built-in.
+        </p>
+        <div class="hero__actions">
+          <a href="https://github.com/Ars-byte/Sunshine-launcher/releases/latest" class="btn btn-primary btn-lg" data-i18n="hero.cta.download">Download</a>
+          <a href="pages/docs.html" class="btn btn-outline btn-lg" data-i18n="hero.cta.docs">Documentation</a>
+          <a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank" class="btn btn-ghost btn-lg">GitHub</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <pre class="hero__ascii" style="font-size:0.65rem;line-height:1.15;color:var(--fg-muted);">
+ .d8888b.                            888    888      888
+d88P  Y88b                           888    888      888
+Y88b.                                888    888      888
+ "Y888b.   888  888 88888b.   .d88b. 888888 88888b.  888  888  .d88b.  888d888
+    "Y88b. 888  888 888 "88b d8P  Y8b888    888 "88b 888  888 d8P  Y8b 888P"
+      "888 888  888 888  888 88888888888    888  888 Y88  88P 88888888 888
+Y88b  d88P Y88b 888 888  888 Y8b.    Y88b.  888  888  Y8bd8P  Y8b.     888
+ "Y8888P"   "Y88888 888  888  "Y8888  "Y888 888  888   Y88P    "Y8888  888
+</pre>
+        <span class="badge badge-outline">Minecraft Bedrock Launcher</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label" data-i18n="features.label">Features</p>
+      <h2 class="section-title" data-i18n="features.title">Everything you<br>need to play.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-block" data-reveal>
+        <p class="feature-block__num">01</p>
+        <h3 class="feature-block__title" data-i18n="features.f1.title">Version Management</h3>
+        <p class="feature-block__text" data-i18n="features.f1.text">Install, switch and play multiple Minecraft Bedrock versions from APK files or Google Play. Automatic version detection and compatibility checking.</p>
+        <div class="feature-block__tags"><span class="badge">APK</span><span class="badge">Google Play</span></div>
+      </div>
+      <div class="feature-block" data-reveal data-delay="0.1">
+        <p class="feature-block__num">02</p>
+        <h3 class="feature-block__title" data-i18n="features.f2.title">Resource Manager</h3>
+        <p class="feature-block__text" data-i18n="features.f2.text">Manage resource packs, behavior packs, skins and worlds from a single interface. Import, export and organize your Minecraft content.</p>
+        <div class="feature-block__tags"><span class="badge">Packs</span><span class="badge">Skins</span><span class="badge">Worlds</span></div>
+      </div>
+      <div class="feature-block" data-reveal data-delay="0.2">
+        <p class="feature-block__num">03</p>
+        <h3 class="feature-block__title" data-i18n="features.f3.title">Performance Optimized</h3>
+        <p class="feature-block__text" data-i18n="features.f3.text">Automatic Mesa/Vulkan optimizations, Zink support, shader caching and multi-threaded rendering for smooth gameplay on any GPU.</p>
+        <div class="feature-block__tags"><span class="badge">Zink</span><span class="badge">Vulkan</span><span class="badge">Mesa</span></div>
+      </div>
+      <div class="feature-block" data-reveal>
+        <p class="feature-block__num">04</p>
+        <h3 class="feature-block__title" data-i18n="features.f4.title">Multi-language</h3>
+        <p class="feature-block__text" data-i18n="features.f4.text">Available in 8 languages: English, Spanish, German, French, Italian, Portuguese, Catalan and Japanese. Switch on the fly without restart.</p>
+        <div class="feature-block__tags"><span class="badge">ES</span><span class="badge">EN</span><span class="badge">DE</span><span class="badge">JA</span></div>
+      </div>
+      <div class="feature-block" data-reveal data-delay="0.1">
+        <p class="feature-block__num">05</p>
+        <h3 class="feature-block__title" data-i18n="features.f5.title">Modern UI</h3>
+        <p class="feature-block__text" data-i18n="features.f5.text">Built with PySide6 (Qt6). Light/dark themes, customizable wallpapers, watermark stickers, and DPI scaling for HiDPI displays.</p>
+        <div class="feature-block__tags"><span class="badge">Qt6</span><span class="badge">PySide6</span><span class="badge">HiDPI</span></div>
+      </div>
+      <div class="feature-block" data-reveal data-delay="0.2">
+        <p class="feature-block__num">06</p>
+        <h3 class="feature-block__title" data-i18n="features.f6.title">Profiles & Migration</h3>
+        <p class="feature-block__text" data-i18n="features.f6.text">Independent profiles with symlinks keep worlds and settings separate. Migrate data from other launchers in one click.</p>
+        <div class="feature-block__tags"><span class="badge">Profiles</span><span class="badge">Migration</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- INSTALL -->
+<section class="section" id="install">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label" data-i18n="install.label">Get Started</p>
+      <h2 class="section-title" data-i18n="install.title">Install in<br>seconds.</h2>
+    </div>
+    <div class="install-grid">
+      <div class="install-steps">
+        <div class="install-step" data-reveal>
+          <div class="install-step__num">1</div>
+          <div class="install-step__content">
+            <h4 data-i18n="install.step.download">Download the latest release</h4>
+            <div class="terminal-wrap">
+              <div class="terminal">
+                <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
+                <div class="terminal__body" id="t-download">
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">wget https://github.com/Ars-byte/Sunshine-launcher/releases/latest/download/SunshineLauncher-v1.0.0.tar.gz</span></div>
+                </div>
+              </div>
+              <button class="copy-btn" data-target="t-download">Copy</button>
+            </div>
+          </div>
+        </div>
+        <div class="install-step" data-reveal data-delay="0.1">
+          <div class="install-step__num">2</div>
+          <div class="install-step__content">
+            <h4 data-i18n="install.step.extract">Extract and run</h4>
+            <div class="terminal-wrap">
+              <div class="terminal">
+                <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
+                <div class="terminal__body" id="t-extract">
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">tar xzf SunshineLauncher-v1.0.0.tar.gz</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd SunshineLauncher-v1.0.0</span></div>
+                  <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">./SunshineLauncher.sh</span></div>
+                </div>
+              </div>
+              <button class="copy-btn" data-target="t-extract">Copy</button>
+            </div>
+          </div>
+        </div>
+        <div class="install-step" data-reveal data-delay="0.2">
+          <div class="install-step__num">3</div>
+          <div class="install-step__content">
+            <h4 data-i18n="install.step.config">Or build from source</h4>
+            <div class="terminal-wrap">
+              <div class="terminal">
+                <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
+                <div class="terminal__body" id="t-source">
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">git clone https://github.com/Ars-byte/Sunshine-launcher.git</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd Sunshine-launcher && ./run.sh</span></div>
+                </div>
+              </div>
+              <button class="copy-btn" data-target="t-source">Copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal>
+        <h3 class="section-title" style="font-size:2rem;margin-bottom:1.5rem" data-i18n="install.req.title">Requirements</h3>
+        <div class="card" style="margin-bottom:1rem">
+          <p class="card__title" data-i18n="install.req.deps">System</p>
+          <p class="card__text" style="margin-top:0.5rem" data-i18n="install.req.deps.text">
+            Linux x86_64 · Python 3.10+ · OpenGL ES 3.0+<br><br>
+            <strong>Qt6 packages:</strong> qt6-webengine, qt6-declarative, qt6-webchannel, qt6-position<br>
+            <strong>System tools:</strong> libzip, unzip, zenity
+          </p>
+        </div>
+        <div class="card">
+          <p class="card__title" data-i18n="install.req.mcpelauncher">mcpelauncher</p>
+          <p class="card__text" style="margin-top:0.5rem" data-i18n="install.req.mcpelauncher.text">
+            Pre-compiled binaries included. Compatible with the official mcpelauncher project.
+          </p>
+        </div>
+        <div style="margin-top:2rem">
+          <a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank" class="btn btn-primary">GitHub Repository</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- PERFORMANCE -->
+<section class="section" id="controls">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label" data-i18n="perf.label">Performance</p>
+      <h2 class="section-title" data-i18n="perf.title">Optimized<br>out of the box.</h2>
+    </div>
+    <div class="controls-grid">
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:1rem;color:var(--fg-muted)" data-i18n="perf.auto">AUTOMATIC OPTIMIZATIONS</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-i18n="table.var">Variable</th><th data-i18n="table.effect">Effect</th></tr></thead>
+            <tbody>
+              <tr><td><code>mesa_glthread=true</code></td><td data-i18n="perf.glthread">Multi-threaded GL dispatch (+30-50% FPS on Intel/AMD)</td></tr>
+              <tr><td><code>MESA_SHADER_CACHE</code></td><td data-i18n="perf.cache">Persistent shader cache (~/.cache/sunshine-shaders)</td></tr>
+              <tr><td><code>MESA_NO_ERROR=1</code></td><td data-i18n="perf.noerror">Skip GL error checking in release builds</td></tr>
+              <tr><td><code>ANV_SPARSE=1</code></td><td data-i18n="perf.anv">Sparse memory for Intel ANV Vulkan driver</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1rem;margin-bottom:1rem;color:var(--fg-muted)" data-i18n="perf.opt">OPTIONAL</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-i18n="table.opt">Option</th><th data-i18n="table.desc">Description</th></tr></thead>
+            <tbody>
+              <tr><td><kbd>Zink Mode</kbd></td><td data-i18n="perf.zink">OpenGL over Vulkan (enable in Settings)</td></tr>
+              <tr><td><kbd>GameMode</kbd></td><td data-i18n="perf.gamemode">System performance tuning via Feral GameMode</td></tr>
+              <tr><td><kbd>Nvidia Prime</kbd></td><td data-i18n="perf.prime">Dedicated GPU on hybrid systems</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">SunshineLauncher <span style="opacity:0.4">by Ars-byte</span></div>
+      <div class="footer__links">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="pages/docs.html" data-i18n="nav.docs">Docs</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#install" data-i18n="nav.install">Install</a>
+        <a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank">GitHub</a>
+      </div>
+      <p class="footer__copy">GPL v3 · 2024 Ars-byte</p>
+    </div>
+  </div>
+</footer>
+
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>

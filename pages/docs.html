@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs — SunshineLauncher</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <style>
+    .docs-layout { display: grid; grid-template-columns: 240px 1fr; gap: 3rem; margin-top: 2rem; }
+    .docs-nav { position: sticky; top: 80px; }
+    .docs-nav a { display: block; padding: 0.5rem 0; color: var(--fg-muted); font-size:0.9rem; border-bottom:1px solid var(--border); }
+    .docs-nav a:hover { color: var(--fg); }
+    .docs-content h2 { font-size: 2rem; margin: 2.5rem 0 1rem; }
+    .docs-content h3 { font-size: 1.3rem; margin: 1.5rem 0 0.75rem; }
+    .docs-content p { color: var(--fg-muted); margin-bottom: 1rem; line-height: 1.7; }
+    @media (max-width:768px) { .docs-layout { grid-template-columns:1fr; } .docs-nav { position:static; margin-bottom:2rem; } }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav__logo" href="../index.html">SUNSHINE<span>LAUNCHER</span></a>
+  <ul class="nav__links">
+    <li><a href="../index.html#features">Features</a></li>
+    <li><a href="../index.html#install">Install</a></li>
+    <li><a href="docs.html">Docs</a></li>
+    <li><a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank">GitHub</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+<section class="section">
+  <div class="container">
+    <h1 class="display" style="font-size:3.5rem;margin-bottom:1rem">Documentation</h1>
+    <div class="docs-layout">
+      <nav class="docs-nav">
+        <a href="#getting-started">Getting Started</a>
+        <a href="#installation">Installation</a>
+        <a href="#configuration">Configuration</a>
+        <a href="#versions">Managing Versions</a>
+        <a href="#resources">Resources & Mods</a>
+        <a href="#profiles">Profiles</a>
+        <a href="#performance">Performance</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+      <div class="docs-content">
+        <h2 id="getting-started">Getting Started</h2>
+        <p>SunshineLauncher is a graphical launcher for Minecraft: Bedrock Edition on Linux. It wraps the mcpelauncher project in a modern PySide6 (Qt6) interface, making it easy to install, manage and play multiple versions of Minecraft Bedrock.</p>
+        <p>To start, download the latest release and run <code>./SunshineLauncher.sh</code>. On first launch, the launcher will detect your installation and scan for available versions.</p>
+
+        <h2 id="installation">Installation</h2>
+        <h3>Portable Release</h3>
+        <div class="terminal-wrap" style="margin-bottom:1.5rem">
+          <div class="terminal">
+            <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
+            <div class="terminal__body">
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">wget https://github.com/Ars-byte/Sunshine-launcher/releases/latest/download/SunshineLauncher-v1.0.0.tar.gz</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">tar xzf SunshineLauncher-v1.0.0.tar.gz && cd SunshineLauncher-v1.0.0</span></div>
+              <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">./SunshineLauncher.sh</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>From Source</h3>
+        <div class="terminal-wrap" style="margin-bottom:1.5rem">
+          <div class="terminal">
+            <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
+            <div class="terminal__body">
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">git clone https://github.com/Ars-byte/Sunshine-launcher.git</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd Sunshine-launcher</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">python3 -m venv venv && source venv/bin/activate</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">pip install -r requirements.txt && ./run.sh</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="configuration">Configuration</h2>
+        <p>Go to <strong>Settings</strong> to configure binary paths. The launcher automatically detects mcpelauncher binaries in common locations. If not found, it will download them automatically.</p>
+        <p>Configure your <strong>Appearance</strong> (theme, colors, background, opacity, sticker/watermark) and <strong>Launch</strong> options (GameMode, Zink, custom environment variables).</p>
+
+        <h2 id="versions">Managing Versions</h2>
+        <p>Use the <strong>Tools</strong> tab to install new Minecraft Bedrock versions from APK files or Google Play. Each version appears in the <strong>Play</strong> tab where you can launch it, create shortcuts, or manage its icon.</p>
+        <p>Versions installed from Google Play may require the DRM mod. The launcher will prompt you to install it automatically.</p>
+
+        <h2 id="resources">Resources & Mods</h2>
+        <p>The <strong>Resource Manager</strong> lets you manage resource packs (RP), behavior packs (BP), skins, and worlds. Import .mcpack files or folders, enable/disable packs per version, and create skin packs.</p>
+        <p>Mods from the official mcpelauncher-moddb repository can be browsed and installed directly from the launcher.</p>
+
+        <h2 id="profiles">Profiles</h2>
+        <p>Create independent profiles to keep worlds, settings, and data separate. Profiles use symbolic links for efficient storage. Switch profiles from the Play tab.</p>
+
+        <h2 id="performance">Performance</h2>
+        <p>SunshineLauncher automatically applies Mesa optimizations:</p>
+        <table>
+          <tr><td><code>mesa_glthread=true</code></td><td>Multi-threaded GL dispatch</td></tr>
+          <tr><td><code>MESA_SHADER_CACHE</code></td><td>Persistent shader cache</td></tr>
+          <tr><td><code>MESA_NO_ERROR=1</code></td><td>Skip GL error checks</td></tr>
+          <tr><td><code>ANV_SPARSE=1</code></td><td>Sparse memory for Intel</td></tr>
+        </table>
+        <p>Enable <strong>Zink</strong> (OpenGL over Vulkan) in Settings > Compatibility for additional performance gains on modern GPUs.</p>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+        <h3>Microsoft Login Error (0x80070057)</h3>
+        <p>This error occurs when Qt6 WebEngine is missing. Install the required packages:</p>
+        <div class="terminal-wrap">
+          <div class="terminal">
+            <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
+            <div class="terminal__body">
+              <div class="terminal__line"><span class="terminal__cmd"># Void Linux</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">doas xbps-install -y qt6-webengine qt6-declarative qt6-webchannel qt6-position</span></div>
+              <div class="terminal__line"><span class="terminal__cmd"># Debian/Ubuntu</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo apt install qt6-webengine-dev qt6-declarative-dev libqt6webchannel6</span></div>
+              <div class="terminal__line"><span class="terminal__cmd"># Arch</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo pacman -S qt6-webengine qt6-declarative qt6-webchannel</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Game won't launch</h3>
+        <p>Ensure mcpelauncher binaries are present and the correct paths are configured in Settings. Check that the APK version matches your architecture (x86_64).</p>
+
+        <h3>Poor performance</h3>
+        <p>Enable Zink mode in Settings > Compatibility. Ensure your GPU drivers are up to date. Check that <code>mesa_glthread=true</code> is active in the launch log.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">SunshineLauncher <span style="opacity:0.4">by Ars-byte</span></div>
+      <p class="footer__copy">GPL v3 · 2024 Ars-byte</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
