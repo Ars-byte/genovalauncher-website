@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SunshineLauncher — Minecraft Bedrock Launcher for Linux</title>
+  <title>PYmc — Minecraft Bedrock Launcher for Linux</title>
   <meta name="description" content="A modern graphical launcher for Minecraft Bedrock Edition on Linux. Install, manage and play multiple versions from APK or Google Play." />
   <link rel="icon" type="image/png" href="assets/icon.png" />
   <link rel="stylesheet" href="css/base.css" />
@@ -49,7 +49,7 @@
     <li><a href="#install" data-i18n="nav.install">Install</a></li>
     <li><a href="#controls" data-i18n="nav.controls">Performance</a></li>
     <li><a href="pages/docs.html" data-i18n="nav.docs">Docs</a></li>
-    <li><a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://github.com/Ars-byte/PYmc-launcher" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
   <div class="nav__actions">
     <div class="lang-switcher" role="group">
@@ -79,14 +79,14 @@
           Multi-language, profiles, mods, and performance optimizations built-in.
         </p>
         <div class="hero__actions">
-          <a href="https://github.com/Ars-byte/Sunshine-launcher/releases/latest" class="btn btn-primary btn-lg" data-i18n="hero.cta.download">Download</a>
+          <a href="https://github.com/Ars-byte/PYmc-launcher/releases/latest" class="btn btn-primary btn-lg" data-i18n="hero.cta.download">Download</a>
           <a href="pages/docs.html" class="btn btn-outline btn-lg" data-i18n="hero.cta.docs">Documentation</a>
-          <a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank" class="btn btn-ghost btn-lg">GitHub</a>
+          <a href="https://github.com/Ars-byte/PYmc-launcher" target="_blank" class="btn btn-ghost btn-lg">GitHub</a>
         </div>
       </div>
       <div class="hero__visual" aria-hidden="true">
         <div class="hero__glow">
-          <img src="assets/icon.png" alt="SunshineLauncher" class="hero__icon" />
+          <img src="assets/icon.png" alt="PYmc" class="hero__icon" />
         </div>
         <span class="badge badge-outline">Minecraft Bedrock Launcher</span>
       </div>
@@ -168,7 +168,7 @@
               <div class="terminal">
                 <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
                 <div class="terminal__body" id="t-download">
-                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">wget https://github.com/Ars-byte/Sunshine-launcher/releases/latest/download/SunshineLauncher-v1.0.0.tar.gz</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">wget https://github.com/Ars-byte/PYmc-launcher/releases/latest/download/PYmc-v1.0.0.tar.gz</span></div>
                 </div>
               </div>
               <button class="copy-btn" data-target="t-download">Copy</button>
@@ -183,9 +183,9 @@
               <div class="terminal">
                 <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
                 <div class="terminal__body" id="t-extract">
-                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">tar xzf SunshineLauncher-v1.0.0.tar.gz</span></div>
-                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd SunshineLauncher-v1.0.0</span></div>
-                  <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">./SunshineLauncher.sh</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">tar xzf PYmc-v1.0.0.tar.gz</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd PYmc-v1.0.0</span></div>
+                  <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">./PYmc.sh</span></div>
                 </div>
               </div>
               <button class="copy-btn" data-target="t-extract">Copy</button>
@@ -200,8 +200,8 @@
               <div class="terminal">
                 <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
                 <div class="terminal__body" id="t-source">
-                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">git clone https://github.com/Ars-byte/Sunshine-launcher.git</span></div>
-                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd Sunshine-launcher && ./run.sh</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">git clone https://github.com/Ars-byte/PYmc-launcher.git</span></div>
+                  <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd PYmc-launcher && ./run.sh</span></div>
                 </div>
               </div>
               <button class="copy-btn" data-target="t-source">Copy</button>
@@ -217,13 +217,13 @@
         <div class="install-step">
           <div class="install-step__num">1</div>
           <div class="install-step__content">
-            <h4>Add SunshineLauncher to flake.nix</h4>
+            <h4>Add PYmc to flake.nix</h4>
             <div class="terminal-wrap" style="margin-bottom:1rem">
               <div class="terminal">
                 <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">flake.nix</span></div>
                 <div class="terminal__body" id="t-nix-input">
                   <div class="terminal__line"><span class="terminal__cmd">inputs = {</span></div>
-                  <div class="terminal__line"><span class="terminal__cmd">&nbsp;&nbsp;sunshine-launcher.url = "github:Ars-byte/Sunshine-launcher";</span></div>
+                  <div class="terminal__line"><span class="terminal__cmd">&nbsp;&nbsp;pymc.url = "github:Ars-byte/PYmc-launcher";</span></div>
                   <div class="terminal__line"><span class="terminal__cmd">};</span></div>
                 </div>
               </div>
@@ -240,7 +240,7 @@
                 <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">configuration.nix</span></div>
                 <div class="terminal__body" id="t-nix-pkg">
                   <div class="terminal__line"><span class="terminal__cmd">environment.systemPackages = [</span></div>
-                  <div class="terminal__line"><span class="terminal__cmd">&nbsp;&nbsp;inputs.sunshine-launcher.packages.${system}.default</span></div>
+                  <div class="terminal__line"><span class="terminal__cmd">&nbsp;&nbsp;inputs.pymc.packages.${system}.default</span></div>
                   <div class="terminal__line"><span class="terminal__cmd">];</span></div>
                 </div>
               </div>
@@ -257,7 +257,7 @@
                 <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div><span class="terminal__title">bash</span></div>
                 <div class="terminal__body" id="t-nix-rebuild">
                   <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo nixos-rebuild switch</span></div>
-                  <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">sunshine-launcher</span></div>
+                  <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">pymc</span></div>
                 </div>
               </div>
               <button class="copy-btn" data-target="t-nix-rebuild">Copy</button>
@@ -283,7 +283,7 @@
           </p>
         </div>
         <div style="margin-top:2rem">
-          <a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank" class="btn btn-primary">GitHub Repository</a>
+          <a href="https://github.com/Ars-byte/PYmc-launcher" target="_blank" class="btn btn-primary">GitHub Repository</a>
         </div>
       </div>
     </div>
@@ -307,7 +307,7 @@
             <thead><tr><th data-i18n="table.var">Variable</th><th data-i18n="table.effect">Effect</th></tr></thead>
             <tbody>
               <tr><td><code>mesa_glthread=true</code></td><td data-i18n="perf.glthread">Multi-threaded GL dispatch (+30-50% FPS on Intel/AMD)</td></tr>
-              <tr><td><code>MESA_SHADER_CACHE</code></td><td data-i18n="perf.cache">Persistent shader cache (~/.cache/sunshine-shaders)</td></tr>
+              <tr><td><code>MESA_SHADER_CACHE</code></td><td data-i18n="perf.cache">Persistent shader cache (~/.cache/pymc-shaders)</td></tr>
               <tr><td><code>MESA_NO_ERROR=1</code></td><td data-i18n="perf.noerror">Skip GL error checking in release builds</td></tr>
               <tr><td><code>ANV_SPARSE=1</code></td><td data-i18n="perf.anv">Sparse memory for Intel ANV Vulkan driver</td></tr>
             </tbody>
@@ -336,13 +336,13 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div class="footer__brand">SunshineLauncher <span style="opacity:0.4">by Ars-byte</span></div>
+      <div class="footer__brand">PYmc <span style="opacity:0.4">by Ars-byte</span></div>
       <div class="footer__links">
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="pages/docs.html" data-i18n="nav.docs">Docs</a>
         <a href="#features" data-i18n="nav.features">Features</a>
         <a href="#install" data-i18n="nav.install">Install</a>
-        <a href="https://github.com/Ars-byte/Sunshine-launcher" target="_blank">GitHub</a>
+        <a href="https://github.com/Ars-byte/PYmc-launcher" target="_blank">GitHub</a>
       </div>
       <p class="footer__copy">GPL v3 · 2024 Ars-byte</p>
     </div>
