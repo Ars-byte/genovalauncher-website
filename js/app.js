@@ -20,7 +20,7 @@ const I18N = {
     'perf.label':'Rendimiento','perf.title':'Optimizado<br>desde el inicio.',
     'perf.auto':'OPTIMIZACIONES AUTOMATICAS','perf.opt':'OPCIONAL',
     'perf.glthread':'Despacho GL multi-hilo (+30-50% FPS en Intel/AMD)',
-    'perf.cache':'Cache de shaders persistente (~/.cache/pymc-shaders)',
+    'perf.cache':'Cache de shaders persistente (~/.cache/genovalauncher-shaders)',
     'perf.noerror':'Omite verificacion de errores GL en produccion',
     'perf.anv':'Memoria dispersa para el driver Vulkan Intel ANV',
     'perf.zink':'OpenGL sobre Vulkan (activar en Ajustes)','perf.gamemode':'Optimizacion del sistema via Feral GameMode','perf.prime':'GPU dedicada en sistemas hibridos',
@@ -47,7 +47,7 @@ const I18N = {
     'perf.label':'Performance','perf.title':'Optimized<br>out of the box.',
     'perf.auto':'AUTOMATIC OPTIMIZATIONS','perf.opt':'OPTIONAL',
     'perf.glthread':'Multi-threaded GL dispatch (+30-50% FPS on Intel/AMD)',
-    'perf.cache':'Persistent shader cache (~/.cache/pymc-shaders)',
+    'perf.cache':'Persistent shader cache (~/.cache/genovalauncher-shaders)',
     'perf.noerror':'Skip GL error checking in release builds',
     'perf.anv':'Sparse memory for Intel ANV Vulkan driver',
     'perf.zink':'OpenGL over Vulkan (enable in Settings)','perf.gamemode':'System performance tuning via Feral GameMode','perf.prime':'Dedicated GPU on hybrid systems',
@@ -74,7 +74,7 @@ const I18N = {
     'perf.label':'Leistung','perf.title':'Optimiert<br>ab Werk.',
     'perf.auto':'AUTOMATISCHE OPTIMIERUNGEN','perf.opt':'OPTIONAL',
     'perf.glthread':'Multi-Threaded GL-Dispatch (+30-50% FPS auf Intel/AMD)',
-    'perf.cache':'Dauerhafter Shader-Cache (~/.cache/pymc-shaders)',
+    'perf.cache':'Dauerhafter Shader-Cache (~/.cache/genovalauncher-shaders)',
     'perf.noerror':'Uberspringt GL-Fehlerprufung in Produktion',
     'perf.anv':'Sparse Memory fur Intel ANV Vulkan-Treiber',
     'perf.zink':'OpenGL uber Vulkan (in Einstellungen aktivieren)','perf.gamemode':'Systemleistungsoptimierung via Feral GameMode','perf.prime':'Dedizierte GPU bei Hybrid-Systemen',
@@ -83,7 +83,7 @@ const I18N = {
 };
 
 const LangManager = (() => {
-  const STORAGE_KEY = 'pymc-lang'; let current = 'es';
+  const STORAGE_KEY = 'genovalauncher-lang'; let current = 'es';
   const t = (key) => (I18N[current] && I18N[current][key]) || (I18N['en'] && I18N['en'][key]) || key;
   const apply = (lang) => {
     current = lang; localStorage.setItem(STORAGE_KEY, lang);
@@ -99,7 +99,7 @@ const LangManager = (() => {
 })();
 
 const ThemeManager = (() => {
-  const K = 'pymc-theme';
+  const K = 'genovalauncher-theme';
   const apply = (t) => {
     document.documentElement.setAttribute('data-theme', t);
     document.querySelectorAll('.theme-toggle').forEach(b => {

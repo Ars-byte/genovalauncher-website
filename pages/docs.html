@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docs — PYmc</title>
+  <title>Docs — GenovaLauncher</title>
   <link rel="icon" type="image/png" href="../assets/icon.png" />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/components.css" />
@@ -26,7 +26,7 @@
     <li><a href="../index.html#features">Features</a></li>
     <li><a href="../index.html#install">Install</a></li>
     <li><a href="docs.html">Docs</a></li>
-    <li><a href="https://github.com/Ars-byte/PYmc-launcher" target="_blank">GitHub</a></li>
+    <li><a href="https://github.com/Ars-byte/GenovaLauncher-launcher" target="_blank">GitHub</a></li>
   </ul>
   <div class="nav__actions">
     <div class="lang-switcher" role="group">
@@ -58,8 +58,8 @@
       </nav>
       <div class="docs-content">
         <h2 id="getting-started">Getting Started</h2>
-        <p>PYmc is a graphical launcher for Minecraft: Bedrock Edition on Linux. It wraps the mcpelauncher project in a modern PySide6 (Qt6) interface, making it easy to install, manage and play multiple versions of Minecraft Bedrock.</p>
-        <p>To start, download the latest release and run <code>./PYmc.sh</code>. On first launch, the launcher will detect your installation and scan for available versions.</p>
+        <p>GenovaLauncher is a graphical launcher for Minecraft: Bedrock Edition on Linux. It wraps the mcpelauncher project in a modern PySide6 (Qt6) interface, making it easy to install, manage and play multiple versions of Minecraft Bedrock.</p>
+        <p>To start, download the latest release and run <code>./GenovaLauncher.sh</code>. On first launch, the launcher will detect your installation and scan for available versions.</p>
 
         <h2 id="installation">Installation</h2>
         <h3>Portable Release</h3>
@@ -67,9 +67,9 @@
           <div class="terminal">
             <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
             <div class="terminal__body">
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">wget https://github.com/Ars-byte/PYmc-launcher/releases/latest/download/PYmc-v1.0.0.tar.gz</span></div>
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">tar xzf PYmc-v1.0.0.tar.gz && cd PYmc-v1.0.0</span></div>
-              <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">./PYmc.sh</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">wget https://github.com/Ars-byte/GenovaLauncher-launcher/releases/latest/download/GenovaLauncher-v1.0.0.tar.gz</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">tar xzf GenovaLauncher-v1.0.0.tar.gz && cd GenovaLauncher-v1.0.0</span></div>
+              <div class="terminal__line success"><span class="terminal__prompt">$</span><span class="terminal__cmd">./GenovaLauncher.sh</span></div>
             </div>
           </div>
         </div>
@@ -79,8 +79,8 @@
           <div class="terminal">
             <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
             <div class="terminal__body">
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">git clone https://github.com/Ars-byte/PYmc-launcher.git</span></div>
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd PYmc-launcher</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">git clone https://github.com/Ars-byte/GenovaLauncher-launcher.git</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">cd GenovaLauncher-launcher</span></div>
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">python3 -m venv venv && source venv/bin/activate</span></div>
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">pip install -r requirements.txt && ./run.sh</span></div>
             </div>
@@ -92,8 +92,8 @@
           <div class="terminal">
             <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
             <div class="terminal__body">
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">xbps-rindex -a pymc-1.0.0_1.x86_64.xbps</span></div>
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">doas xbps-install -R $PWD pymc</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">xbps-rindex -a genovalauncher-1.0.0_1.x86_64.xbps</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">doas xbps-install -R $PWD genovalauncher</span></div>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@
           <div class="terminal">
             <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
             <div class="terminal__body">
-              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo dpkg -i pymc-1.1.1-amd64.deb</span></div>
+              <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo dpkg -i genovalauncher-1.1.1-amd64.deb</span></div>
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo apt install -f</span></div>
             </div>
           </div>
@@ -114,9 +114,9 @@
             <div class="terminal__bar"><div class="terminal__dot"></div><div class="terminal__dot"></div><div class="terminal__dot"></div></div>
             <div class="terminal__body">
               <div class="terminal__line"><span class="terminal__cmd"># flake.nix</span></div>
-              <div class="terminal__line"><span class="terminal__cmd">inputs.pymc.url = "github:Ars-byte/PYmc-launcher";</span></div>
+              <div class="terminal__line"><span class="terminal__cmd">inputs.genovalauncher.url = "github:Ars-byte/GenovaLauncher-launcher";</span></div>
               <div class="terminal__line"><span class="terminal__cmd"># configuration.nix</span></div>
-              <div class="terminal__line"><span class="terminal__cmd">environment.systemPackages = [ inputs.pymc.packages.${system}.default ];</span></div>
+              <div class="terminal__line"><span class="terminal__cmd">environment.systemPackages = [ inputs.genovalauncher.packages.${system}.default ];</span></div>
               <div class="terminal__line"><span class="terminal__prompt">$</span><span class="terminal__cmd">sudo nixos-rebuild switch</span></div>
             </div>
           </div>
@@ -138,7 +138,7 @@
         <p>Create independent profiles to keep worlds, settings, and data separate. Profiles use symbolic links for efficient storage. Switch profiles from the Play tab.</p>
 
         <h2 id="performance">Performance</h2>
-        <p>PYmc automatically applies Mesa optimizations:</p>
+        <p>GenovaLauncher automatically applies Mesa optimizations:</p>
         <table>
           <tr><td><code>mesa_glthread=true</code></td><td>Multi-threaded GL dispatch</td></tr>
           <tr><td><code>MESA_SHADER_CACHE</code></td><td>Persistent shader cache</td></tr>
@@ -178,7 +178,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__inner">
-      <div class="footer__brand">PYmc <span style="opacity:0.4">by Ars-byte</span></div>
+      <div class="footer__brand">GenovaLauncher <span style="opacity:0.4">by Ars-byte</span></div>
       <p class="footer__copy">GPL v3 · 2024 Ars-byte</p>
     </div>
   </div>
